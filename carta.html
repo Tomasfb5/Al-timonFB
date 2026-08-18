@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carta — Resto Pizzería Al Timón</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#12263F">
+<style>:root{
+  --tinta:#12263F;--tinta-2:#4A6FA5;--oro:#C6A664;--crema:#FAF7F2;
+  --papel:#ffffff;--texto:#1B2430;--texto-2:#5F6B7A;--linea:#E7E1D6;--wa:#25D366;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',Times,serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --ancho:1140px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--crema);color:var(--texto);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.env{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+@media(max-width:640px){section{padding:60px 0}}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(1.85rem,4.6vw,2.7rem)}
+h3{font-size:1.22rem}
+p{color:var(--texto-2)}
+.centro{text-align:center}
+.eyebrow{
+  display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin-bottom:1rem
+}
+.filete{width:52px;height:1px;background:var(--oro);margin:1.3rem 0}
+.centro .filete{margin-inline:auto}
+.bajada{max-width:58ch;font-size:1.03rem}
+.centro .bajada{margin-inline:auto}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.9rem 1.7rem;font-family:var(--sans);font-size:.83rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;text-decoration:none;
+  border:1px solid transparent;cursor:pointer;transition:all .25s ease
+}
+.btn svg{width:1.15em;height:1.15em}
+.btn-oro{background:var(--oro);color:#1B2430;border-color:var(--oro)}
+.btn-oro:hover{background:transparent;color:var(--oro)}
+.btn-linea{border-color:currentColor;color:inherit;background:transparent}
+.btn-linea:hover{background:currentColor}
+.btn-linea:hover span,.btn-linea:hover{color:var(--tinta)}
+.hero .btn-linea{color:#fff}
+.hero .btn-linea:hover{background:#fff;color:var(--tinta)}
+.btn-wa{background:var(--wa);color:#fff;border-color:var(--wa)}
+.btn-wa:hover{filter:brightness(.92)}
+
+/* header */
+header.top{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,box-shadow .3s,padding .3s;padding:.6rem 0}
+header.top .env{display:flex;align-items:center;gap:1rem}
+header.top.solido{background:var(--tinta);box-shadow:0 2px 20px rgba(0,0,0,.16)}
+.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff}
+.marca img{height:44px;width:auto}
+.marca svg{width:30px;height:30px;color:var(--oro)}
+.marca b{font-family:var(--serif);font-size:1.16rem;font-weight:400;letter-spacing:.02em}
+.nav{margin-left:auto;display:none;gap:1.9rem}
+.nav a{color:#fff;text-decoration:none;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.nav a:hover{opacity:1;color:var(--oro)}
+@media(min-width:940px){.nav{display:flex}}
+.top .btn{margin-left:auto;padding:.62rem 1.15rem;font-size:.72rem}
+@media(min-width:940px){.top .btn{margin-left:1.9rem}}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,38,.72),rgba(10,22,38,.5) 45%,rgba(10,22,38,.88))}
+/* Fondo para cuando todavía no hay foto: atardecer sobre el río, sin usar
+   imágenes de nadie. Que se vea intencional y no "falta la foto". */
+.hero-fondo-liso{position:absolute;inset:0;background:
+  radial-gradient(880px 400px at 50% 70%,rgba(198,166,100,.30),transparent 62%),
+  radial-gradient(1200px 700px at 74% 10%,rgba(74,111,165,.40),transparent 60%),
+  linear-gradient(178deg,#0A1626 0%,#12263F 44%,#17334F 62%,#0B1A2C 100%)}
+.hero-fondo-liso::after{
+  content:'';position:absolute;left:0;right:0;top:70%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(198,166,100,.42) 25%,rgba(198,166,100,.42) 75%,transparent)}
+.hero .env{position:relative;z-index:2;padding-top:90px;padding-bottom:60px}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);color:#fff;margin-bottom:.4rem}
+.hero .lede{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.7vw,1.5rem);color:#EBE3D5;max-width:26ch;margin-bottom:2rem}
+.hero .eyebrow{color:var(--oro)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-logo{height:132px;width:auto;margin-bottom:1.5rem}
+@media(max-width:640px){.hero-logo{height:100px}}
+
+/* Logo con fondo blanco puesto sobre fondo oscuro.
+   invert() lleva el blanco a negro (que screen vuelve invisible) y el azul marino
+   del logo a un dorado casi idéntico al de la página. Queda integrado, no pegado. */
+.logo-inv{filter:invert(1) saturate(.72) brightness(1.12) contrast(1.06);mix-blend-mode:screen}
+
+/* Lockup de marca dibujada: timón + nombre + bajada, como el logo original */
+.lockup{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.8rem}
+.lockup .mark{width:78px;height:auto;color:var(--oro)}
+@media(max-width:640px){.lockup .mark{width:60px}}
+.lockup .nombre{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2rem);color:#fff;line-height:1;margin-top:.5rem}
+.lockup .sub{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--oro);margin-top:.5rem;padding-left:.2em}
+.marca .mark{width:32px;height:auto;color:var(--oro);flex:none}
+
+/* barra de datos */
+.datos{background:var(--tinta);color:#fff;padding:0}
+.datos-grid{display:grid;grid-template-columns:1fr;border-top:1px solid rgba(255,255,255,.13)}
+@media(min-width:760px){.datos-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}}
+.dato{display:flex;gap:.9rem;align-items:flex-start;padding:1.7rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+@media(min-width:760px){.dato{border-bottom:0;border-right:1px solid rgba(255,255,255,.13)}.dato:last-child{border-right:0}}
+.dato svg{width:21px;height:21px;color:var(--oro);flex:none;margin-top:.2rem}
+.dato b{display:block;font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--oro);margin-bottom:.25rem;font-weight:700}
+.dato span{font-size:.95rem;color:#E8EDF4}
+.dato a{color:#E8EDF4;text-decoration:none}
+.dato a:hover{color:var(--oro)}
+
+/* la vista */
+.dos{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.dos{grid-template-columns:1fr 1fr;gap:4.5rem}}
+.foto-marco{position:relative}
+.foto-marco img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.foto-marco::after{content:'';position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--oro);z-index:-1}
+.ph{
+  aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;
+  background:linear-gradient(150deg,var(--tinta),var(--tinta-2));color:rgba(255,255,255,.75);
+  font-family:var(--serif);font-style:italic;font-size:1.02rem
+}
+
+/* carta */
+.carta{background:var(--papel)}
+.carta-cats{display:grid;gap:3rem}
+@media(min-width:820px){.carta-cats{grid-template-columns:1fr 1fr;gap:3rem 4rem}}
+.cat h3{color:var(--tinta);font-size:1.35rem;margin-bottom:.2rem}
+.cat .cat-nota{font-size:.85rem;color:var(--texto-2);font-style:italic;margin-bottom:1.1rem}
+.cat .filete{margin:.7rem 0 1.2rem}
+.plato{display:flex;gap:1rem;align-items:baseline;padding:.72rem 0;border-bottom:1px dotted var(--linea)}
+.plato:last-child{border-bottom:0}
+.plato-n{font-weight:600;color:var(--texto);font-size:1rem}
+.plato-d{font-size:.86rem;color:var(--texto-2);margin-top:.15rem;line-height:1.55}
+.plato-p{margin-left:auto;font-family:var(--serif);font-size:1.05rem;color:var(--oro);white-space:nowrap}
+.destacado{display:inline-block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:#1B2430;padding:.1rem .45rem;margin-left:.5rem;vertical-align:middle;font-weight:700}
+
+/* especialidades */
+.esp{display:grid;gap:1.6rem}
+@media(min-width:820px){.esp{grid-template-columns:repeat(3,1fr)}}
+.esp-card{background:var(--papel);border:1px solid var(--linea);padding:2.2rem 1.8rem;text-align:center}
+.esp-card svg{width:34px;height:34px;color:var(--oro);margin:0 auto 1rem}
+.esp-card h3{color:var(--tinta);margin-bottom:.5rem}
+.esp-card p{font-size:.93rem}
+
+/* franja oscura */
+.oscura{background:var(--tinta);color:#fff}
+.oscura h2,.oscura h3{color:#fff}
+.oscura p{color:#C7D2E0}
+.oscura .eyebrow{color:var(--oro)}
+
+/* promo */
+.promo{border:1px solid var(--oro);padding:2.6rem 2rem;text-align:center;max-width:660px;margin:0 auto}
+.promo .grande{font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.4rem);color:var(--oro);line-height:1;margin:.4rem 0 .6rem}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.7rem}
+.galeria figure{overflow:hidden;aspect-ratio:1;background:var(--tinta)}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.galeria figure:hover img{transform:scale(1.06)}
+
+/* horarios */
+.horarios{border:1px solid var(--linea);background:var(--papel)}
+.hfila{display:flex;justify-content:space-between;gap:1rem;padding:.95rem 1.5rem;border-bottom:1px solid var(--linea);font-size:.95rem}
+.hfila:last-child{border-bottom:0}
+.hfila b{font-weight:600}
+.hfila span{color:var(--texto-2);text-align:right}
+.hfila.cerrado span{color:#B4341F}
+
+/* mapa */
+.mapa{aspect-ratio:16/10;border:1px solid var(--linea);background:var(--papel)}
+.mapa iframe{width:100%;height:100%;border:0;display:block}
+
+/* formulario de reserva */
+.reserva{max-width:660px;margin:0 auto}
+.campos{display:grid;gap:1.1rem;margin-top:2.2rem}
+@media(min-width:620px){.campos{grid-template-columns:1fr 1fr}.campo-ancho{grid-column:1/-1}}
+.campo label{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin-bottom:.45rem;font-weight:700}
+.campo input,.campo select,.campo textarea{
+  width:100%;padding:.85rem 1rem;background:rgba(255,255,255,.06);color:#fff;
+  border:1px solid rgba(255,255,255,.2);border-radius:0;font-family:var(--sans);font-size:.97rem
+}
+.campo textarea{resize:vertical;min-height:82px}
+.campo input:focus,.campo select:focus,.campo textarea:focus{border-color:var(--oro);outline:none;background:rgba(255,255,255,.1)}
+.campo input::placeholder,.campo textarea::placeholder{color:rgba(255,255,255,.42)}
+.campo select option,.campo select optgroup{background:#12263F;color:#fff}
+.campo input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.65;cursor:pointer}
+.reserva .btn{width:100%;margin-top:1.6rem;padding:1.05rem}
+.reserva .pie{font-size:.82rem;color:#9FB0C4;text-align:center;margin-top:1rem}
+
+/* cierre */
+.cierre{text-align:center;padding:90px 0}
+.cierre h2{color:#fff;margin-bottom:.6rem}
+.cierre p{max-width:46ch;margin:0 auto 2rem}
+
+footer{background:#0C1A2B;color:#93A4B8;padding:3.5rem 0 6rem;font-size:.9rem}
+.foot{display:grid;gap:2rem}
+@media(min-width:800px){.foot{grid-template-columns:1.5fr 1fr 1fr}}
+footer h4{font-family:var(--sans);font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--oro);margin-bottom:.9rem;font-weight:700}
+footer a{color:#93A4B8;text-decoration:none;display:block;padding:.2rem 0}
+footer a:hover{color:var(--oro)}
+.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:2.5rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;font-size:.8rem}
+.legal a{display:inline;text-decoration:underline}
+
+.flota{position:fixed;right:18px;bottom:18px;z-index:70;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 26px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s}
+.flota:hover{transform:scale(1.08)}
+.flota svg{width:29px;height:29px}
+
+.aviso{background:#6B2110;color:#fff;text-align:center;padding:.65rem 1rem;font-size:.83rem;line-height:1.5;position:relative;z-index:80}
+.aviso strong{color:#F5C99B}
+@media print{.flota,.top{display:none}}
+body{background:var(--papel)}
+.cabecera{background:var(--tinta);color:#fff;text-align:center;padding:2.6rem 1.2rem 2.2rem}
+.cabecera img{height:82px;margin:0 auto 1rem}
+.cabecera svg{width:56px;height:auto;color:var(--oro);margin:0 auto .8rem}
+.cabecera .mark{display:block;width:64px;margin:0 auto .7rem;color:var(--oro)}
+.cabecera h1{color:#fff;font-size:1.9rem}
+.cabecera p{color:#C7D2E0;font-size:.9rem;margin-top:.4rem}
+section{padding:2.6rem 0}
+</style>
+</head>
+<body>
+<div class="aviso"><strong>VISTA PREVIA NO OFICIAL.</strong> Carta de muestra preparada para Resto Pizzería Al Timón. No es la carta oficial del local.</div>
+<div class="cabecera">
+  <img src="logo-claro.png" alt="Resto Pizzería Al Timón">
+  <h1>Resto Pizzería Al Timón</h1>
+  <div class="filete" style="margin-inline:auto"></div>
+  <p>Martes a domingo · 12 a 15 h y 20 a 00 h</p>
+</div>
+<section>
+  <div class="env">
+    <div class="carta-cats"><div class="cat">
+  <h3>Platos principales</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Salmón</div>
+        <div class="plato-d">Grillé, con arroz avinagrado, pepino, palta, queso crema, sésamo tostado y aceite de alga nori.</div>
+      </div>
+      <div class="plato-p">$952</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Lenguado</div>
+        <div class="plato-d">A la manteca cítrica, verduras teriyaki y aceite de albahaca.</div>
+      </div>
+      <div class="plato-p">$728</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Pollo al curry</div>
+        <div class="plato-d">Alimonado con jengibre, mix de verdes, escalibada y olivada.</div>
+      </div>
+      <div class="plato-p">$604</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Bondiola braseada</div>
+        <div class="plato-d">Con puré de calabaza y verduras salteadas.</div>
+      </div>
+      <div class="plato-p">$604</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Pastas caseras y arroces</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Spaghetti con frutos de mar</div>
+        
+      </div>
+      <div class="plato-p">$520</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Spaghetti con bolognesa</div>
+        
+      </div>
+      <div class="plato-p">$370</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sorrentinos de jamón y queso</div>
+        <div class="plato-d">8 unidades.</div>
+      </div>
+      <div class="plato-p">$425</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sorrentinos de ricota, danbo y nuez</div>
+        <div class="plato-d">Masa de espinaca.</div>
+      </div>
+      <div class="plato-p">$425</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Raviolones de verduras</div>
+        <div class="plato-d">Masa de espinaca. 8 unidades.</div>
+      </div>
+      <div class="plato-p">$425</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Ravioles de verduras</div>
+        
+      </div>
+      <div class="plato-p">$370</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Ñoquis</div>
+        
+      </div>
+      <div class="plato-p">$370</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Woks</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Wok de pollo</div>
+        
+      </div>
+      <div class="plato-p">$455</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Wok vegetariano</div>
+        
+      </div>
+      <div class="plato-p">$455</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Sándwiches calientes</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Sándwich Al Timón<span class="destacado">De la casa</span></div>
+        <div class="plato-d">Lomo, cebolla y morrón caramelizados, chip de panceta, huevo duro, jamón y mozzarella.</div>
+      </div>
+      <div class="plato-p">$435</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich mediterráneo</div>
+        <div class="plato-d">Jamón crudo, aceitunas, mozzarella, huevo frito de codorniz y rúcula.</div>
+      </div>
+      <div class="plato-p">$340</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich caprese</div>
+        <div class="plato-d">Tomate, albahaca y mozzarella.</div>
+      </div>
+      <div class="plato-p">$320</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich napolitano</div>
+        <div class="plato-d">Tomate, jamón, huevo duro y mozzarella.</div>
+      </div>
+      <div class="plato-p">$320</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich de mozzarella y panceta</div>
+        
+      </div>
+      <div class="plato-p">$320</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich de mozzarella</div>
+        
+      </div>
+      <div class="plato-p">$285</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Sándwich común</div>
+        
+      </div>
+      <div class="plato-p">$250</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Milanesas</h3>
+  <div class="filete"></div>
+  <p class="cat-nota">Todas con guarnición.</p>
+  <div class="plato">
+      <div>
+        <div class="plato-n">Milanesa Al Timón<span class="destacado">De la casa</span></div>
+        <div class="plato-d">Provolone, salsa cheddar, chip de panceta y huevo frito.</div>
+      </div>
+      <div class="plato-p">$515</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa con guarnición</div>
+        
+      </div>
+      <div class="plato-p">$400</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa a caballo</div>
+        <div class="plato-d">Huevo frito.</div>
+      </div>
+      <div class="plato-p">$448</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa napolitana</div>
+        <div class="plato-d">Salsa de tomate, jamón y mozzarella.</div>
+      </div>
+      <div class="plato-p">$492</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa provolone</div>
+        <div class="plato-d">Panceta y provolone.</div>
+      </div>
+      <div class="plato-p">$492</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa suiza</div>
+        <div class="plato-d">Salsa blanca, mozzarella y pimienta negra.</div>
+      </div>
+      <div class="plato-p">$492</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa caprese</div>
+        
+      </div>
+      <div class="plato-p">$492</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa 4 quesos</div>
+        <div class="plato-d">Cheddar, mozzarella, roquefort y provolone.</div>
+      </div>
+      <div class="plato-p">$515</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Milanesa para 2 en pan de pita con fritas</div>
+        <div class="plato-d">Milanesa de entrecot, lechuga, tomate, huevo frito, chips de panceta, provolone, jamón, rúcula, salsa cheddar, ketchup y papas fritas.</div>
+      </div>
+      <div class="plato-p">$590</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Chivitos</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Chivito Al Timón<span class="destacado">De la casa</span></div>
+        <div class="plato-d">Bife, jamón, mozzarella, panceta, dos huevos fritos, aceitunas, cebolla, morrón, mixta, rusa, papas bravas y gramajo.</div>
+      </div>
+      <div class="plato-p">$660</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Chivito al pan</div>
+        <div class="plato-d">Lomo, lechuga, tomate, jamón, mozzarella, panceta, huevo frito y papas fritas.</div>
+      </div>
+      <div class="plato-p">$548</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Chivito al plato</div>
+        <div class="plato-d">Lomo, jamón, mozzarella, panceta, huevo frito, mixta, rusa y papas fritas.</div>
+      </div>
+      <div class="plato-p">$594</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Postres</h3>
+  <div class="filete"></div>
+  
+  <div class="plato">
+      <div>
+        <div class="plato-n">Al Timón<span class="destacado">De la casa</span></div>
+        <div class="plato-d">Morcillón de chocolate, dulce de leche al café, crocante de coco y helado de crema.</div>
+      </div>
+      <div class="plato-p">$210</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Frutas de Carmen</div>
+        <div class="plato-d">Frutas al wok en salsa de frutilla con helado de crema.</div>
+      </div>
+      <div class="plato-p">$270</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Flan</div>
+        <div class="plato-d">Con dulce de leche al café y salsa de chocolate.</div>
+      </div>
+      <div class="plato-p">$200</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Brownie de chocolate</div>
+        <div class="plato-d">Con helado de crema.</div>
+      </div>
+      <div class="plato-p">$200</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Cheesecake de frutilla</div>
+        
+      </div>
+      <div class="plato-p">$200</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Mousse de limón</div>
+        <div class="plato-d">Merengue suizo, mousse de limón y salsa de frutilla.</div>
+      </div>
+      <div class="plato-p">$190</div>
+    </div>
+</div>
+<div class="cat">
+  <h3>Bebidas</h3>
+  <div class="filete"></div>
+  <p class="cat-nota">Consultá la carta de vinos y la cerveza por litro.</p>
+  <div class="plato">
+      <div>
+        <div class="plato-n">Refresco Coca-Cola 1 L</div>
+        
+      </div>
+      <div class="plato-p">$190</div>
+    </div>
+<div class="plato">
+      <div>
+        <div class="plato-n">Gaseosa Coca-Cola 600 ml</div>
+        
+      </div>
+      <div class="plato-p">$100</div>
+    </div>
+</div></div>
+    <div class="centro" style="margin-top:3rem"><a class="btn btn-wa" href="https://wa.me/59892370170?text=Hola%20Resto%20Pizzer%C3%ADa%20Al%20Tim%C3%B3n%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.15-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.04-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.32l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.88.98 6.65 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42M20.52 3.45A11.76 11.76 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.08 24l6.35-1.66a11.8 11.8 0 0 0 5.61 1.43h.01c6.53 0 11.85-5.32 11.85-11.86 0-3.17-1.23-6.15-3.47-8.39"/></svg> Pedir por WhatsApp</a></div>
+    <p class="centro" style="margin-top:2.4rem;font-size:.8rem">Los precios pueden variar. Consultá con el mozo.</p>
+  </div>
+</section>
+</body>
+</html>
